@@ -739,5 +739,21 @@
             document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
+    <script>
+function exploreCareer() {
+  const career = document.getElementById("careerSearch").value.trim();
+  if (!career) return;
+
+  // Google Analytics tracking
+  if (typeof gtag === "function") {
+    gtag("event", "career_search", {
+      career_name: career
+    });
+  }
+
+  // Existing logic (keep this)
+  renderCareerResults(career);
+}
+</script>
 </body>
 </html>
