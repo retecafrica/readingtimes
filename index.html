@@ -619,6 +619,15 @@
             ready = await db.initialize();
             if (!ready) alert('Error loading database');
         });
+        // 🔹 Career search tracking
+    function trackCareerSearch(careerName) {
+        if (typeof gtag === "function") {
+            gtag("event", "career_search", {
+                career_name: careerName
+            });
+        }
+    }
+</script>
 
         function scrollToSearch() {
             document.getElementById('search').scrollIntoView({ behavior: 'smooth' });
